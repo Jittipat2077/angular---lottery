@@ -1,0 +1,126 @@
+<div class="content">
+  <div class="container-search">
+    <section class="top-text">
+      <h1>ค้นหาหมายเลขสลาก</h1>
+      <p>
+        ค้นหาหมายเลขสลากสลากที่ท่านต้องการเลือกซื้อโดยการพิมพ์หมายเลชที่ต้องการค้นหาลงในช่อง
+      </p>
+    </section>
+
+    <div class="search">
+      <div class="flex justify-content-center flex-wrap">
+        <div
+          class="flex flex-wrap-reverse md:flex-wrap"
+          style="max-width: 500px"
+        >
+          <input type="text" class="input-number" minlength="1" #num_1 />
+          <input type="text" class="input-number" minlength="2" #num_2 />
+          <input type="text" class="input-number" minlength="3" #num_3 />
+          <input type="text" class="input-number" minlength="4" #num_4 />
+          <input type="text" class="input-number" minlength="5" #num_5 />
+          <input type="text" class="input-number" minlength="6" #num_6 />
+        </div>
+        <div class="search-set">
+          <div class="flex justify-content-center flex-wrap">
+            <div class="flex align-items-center justify-content-center">
+              <div
+                class="flex flex-wrap-reverse md:flex-wrap"
+                style="max-width: 500px"
+              >
+                <select #set_no class="select-set" aria-label="ชุดที่">
+                  <option disabled>เลือกชุด</option>
+                  <option>เลือกชุด</option>
+                  <ng-container *ngFor="let i of arrayNumbers">
+                    <option [value]="i">{{ i }}</option>
+                  </ng-container>
+                </select>
+
+                <select #lot_no class="select-set" aria-label="ชุดที่">
+                  <option disabled>เลือกงวด</option>
+                  <option>เลือกงวด</option>
+                  <ng-container *ngFor="let i of arraylot_no">
+                    <option [value]="i">{{ i }}</option>
+                  </ng-container>
+                </select>
+                <button
+                  type="button"
+                  class="search-input"
+                  (click)="
+                    searchTicket(
+                      num_1.value,
+                      num_2.value,
+                      num_3.value,
+                      num_4.value,
+                      num_5.value,
+                      num_6.value,
+                      set_no.value,
+                      lot_no.value
+                    )
+                  "
+                >
+                  ค้นหา
+                </button>
+                <button
+                  type="button"
+                  class="reset-input"
+                  (click)="clearInput(num_1, num_2, num_3, num_4, num_5, num_6, set_no, lot_no)"
+                >
+                  รีเซีต
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid grid-nogutter" #lottery>
+      <div class="col-12 md:col-6 lg:col-4" *ngFor="let lottery of lotterys">
+        <div class="box-content">
+          <div class="flex">
+            <img src="../../assets/lottery_logo.png" style="height: 20px" />
+            <p class="titel">สลากกิน งวดที่</p>
+          </div>
+          <div class="flex">
+            <div class="birthday">{{ lottery.lot_date }}</div>
+          </div>
+          <div class="flex">
+            <div class="number">{{ lottery.lot_number }}</div>
+            <div class="yeah">
+              <div class="flex flex-column">
+                <p>ชุดที่</p>
+                <p>{{ lottery.set_no }}</p>
+              </div>
+            </div>
+            <div class="period">
+              <div class="flex flex-column">
+                <p>งวดที่</p>
+                <p>{{ lottery.lot_no }}</p>
+              </div>
+            </div>
+            <span class="example-spacer"></span>
+
+            <button class="select" (click)="select(lottery, lot_amount.value)">
+              เลือก
+            </button>
+          </div>
+          <div class="store">
+            <div class="flex">
+              <p class="store">จํานวน</p>
+
+              <input
+                type="number"
+                id="quantity"
+                name="quantity"
+                min="1"
+                max="5"
+                value="1"
+                #lot_amount
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

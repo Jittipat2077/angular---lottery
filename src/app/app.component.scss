@@ -1,0 +1,17 @@
+body{
+    background-color: rgb(247, 247, 247);
+   height:100%;
+   
+}
+.content{
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+    margin-left: 20%;
+    margin-right: 20%;
+   
+}
+@media screen and (max-width: 700px) {
+    .content {
+  margin: 0;
+    }
+  }

@@ -1,0 +1,238 @@
+.container-search{
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+.grid{
+    padding-top: 2%;
+}
+.top-text{
+  font-weight: lighter;
+  padding: 2%;
+  font-family: 'Mitr', sans-serif;
+  border-bottom: 1px solid #cfcfcf ;
+}
+h1{
+  font-family: 'Mitr', sans-serif;
+}
+.p-selec{
+    padding: 0px;
+}
+
+.search{
+    
+    padding-top: 2%;
+}
+
+.box-content{
+  padding-left: 5px;
+  padding-right: 5px;
+    border-radius: 10px;
+    margin: 5px;
+    font-family: 'Mitr', sans-serif;
+    box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+   
+}
+.titel{
+    padding-left: 5px;
+}
+.flex-column{
+    margin: 0;
+    padding: 0;
+}
+.day{
+    padding-right: 5px;
+}
+.mount{
+    padding-right: 5px;
+}
+.yeah{
+    padding-right: 5px;
+}
+p{
+    margin: 0;
+}
+.period{
+    margin-right: 5px;
+    text-align: center;
+}
+.yeah{
+    margin-right: 5px;
+    text-align: center;
+}
+.number{
+    font-weight: bold;
+    border-radius: 10px;
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 5px;
+    height: 25px;
+    padding-left: 5px;
+    padding-right: 5px;
+    letter-spacing: 5px;
+    background-color: rgb(255, 248, 152);
+}
+.content{
+  background-color: rgb(255, 255, 255);
+  box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+  margin-left: 15%;
+    margin-right: 15%;
+ height: 100%;
+}
+.select{
+margin-right: 5px;
+    color: #568bff;
+    transition: 0.2s;
+    padding-left: 5px;
+    padding-right: 5px;
+    border: 2px solid #568bff ;
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+}
+.select:hover{
+    transition: 0.2s;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+.example-spacer {
+    flex: 1 1 auto;
+  }
+  .store{
+    font-size: 12px;
+    padding-top: 5px;
+    color: #818181;
+  }
+  button{
+    
+    font-family: 'Mitr', sans-serif;
+  }
+  .p-inputgroup{
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  }
+  input{
+    font-family: 'Mitr', sans-serif;
+  }
+  option{
+    text-align: left;
+    font-family: 'Mitr', sans-serif;
+  }
+  .p-select{
+
+    margin-top: 5px;
+    font-family: 'Mitr', sans-serif;
+  }
+  .select-period{
+    font-family: 'Mitr', sans-serif;
+    margin-left: 5px;
+    border-radius: 5px;
+    margin-right: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: center;
+     outline: none;
+     border: none;
+     box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+  }
+  .select-set{
+    font-family: 'Mitr', sans-serif;
+    margin-left: 5px;
+    border-radius: 5px;
+    margin-right: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: center;
+     outline: none;
+     border: none;
+     box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+  }
+
+  .pInputText{
+    font-size: 25px;
+    outline: none;
+    border: none;
+    
+  }
+
+  .input-number:focus{
+    border: none;
+  }
+  .search-input{
+   height:35px;
+    width: 100px;
+    padding: 5px;
+   margin-right: 5px;
+   font-size: 15px;
+border-radius: 5px;
+    outline: none;
+    border: none;
+    text-align: center;
+    color: #ffffff;
+    background-color: #78a3ff;
+   
+    transition: 0.3s;
+  }
+  .search-input:hover{
+    background-color: #3c68c9;
+    transition: 0.3s;
+ 
+  }
+  .reset-input{
+    width: 100px;
+    padding: 5px;
+    font-size: larger;
+    border-radius: 5px;
+        outline: none;
+        border: none;
+        text-align: center;
+        color: #ffffff;
+        font-size: 15px;
+        background-color: #eb2c3c;
+        transition: 0.3s;
+  }
+  .reset-input :hover{
+    transition: 0.3s;
+    background-color: #7a000a;
+  }
+  .input-number{
+    border: 2px solid #272727 ;
+    background-color: #ffffff;
+    box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+    text-align: center;
+    outline: none;border: none;
+    border-radius: 10px;
+    height: 50px;
+    width: 50px;
+    margin-left: 10px;
+    transition: 0.3s;
+
+  }
+  .input-number:hover{
+    transition: 0.3s;
+    background-color: #eeeeee;
+  }
+  .search-set{
+    margin-left: 15px;
+    margin-top: 10px;
+  }
+  .price{
+    margin-left: 15px;
+   width: 50px;
+    text-align: center;
+     outline: none;
+     border: none;
+     box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+    border: none;
+    height: 20px;
+  }
+
+  @media screen and (max-width: 700px) {
+    .content {
+  margin: 0;
+    }
+    .container-search{
+      padding: 0;
+    }
+  }

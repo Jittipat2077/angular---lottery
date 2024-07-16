@@ -1,0 +1,87 @@
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Mitr&display=swap"
+  rel="stylesheet"
+/>
+<div class="content">
+  <section class="top-text">
+    <h1>เพิ่มข้อมูลหมายเลขสลาก</h1>
+    <p>รายการสั่งซื้อพร้อมการค้นหาหมายเลขที่ได้ทําการสั่งซื้อ</p>
+  </section>
+  <section class="content-top">
+    <div class="grid">
+      <div class="col-12 md:col-6 lg:col-4">
+        <a routerLink="/today">
+          <div class="text-link">
+            <i class="pi pi-sun" style="font-size: 1rem; padding-right: 5px"></i
+            >การสั่งซื้อสลากประจําวัน
+          </div>
+        </a>
+      </div>
+      <div class="col-12 md:col-6 lg:col-4">
+        <a routerLink="/add-data">
+          <div class="text-link">
+            <i
+              class="pi pi-plus"
+              style="font-size: 1rem; padding-right: 5px"
+            ></i
+            >เพิ่มข้อมูลสลาก
+          </div>
+        </a>
+      </div>
+      <div class="col-12 md:col-12 lg:col-4">
+        <a routerLink="/dashboard"
+          ><div class="text-link">
+            <i
+              class="pi pi-search"
+              style="font-size: 1rem; padding-right: 5px"
+            ></i
+            >ค้นหาสลาก
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+  <section class="form">
+    <div class="field">
+      <p>หมายเลขสลาก</p>
+      <input id="lot_number" type="text" class="text-input" #lot_number />
+    </div>
+    <div class="field">
+      <p>วันที่</p>
+      <input id="lot_date" type="date" class="text-input" #lot_date />
+    </div>
+    <div class="field">
+      <p>ราคาต่อใบ</p>
+      <input id="price" type="text" class="text-input" #price />
+    </div>
+    <div class="field">
+      <p>ชุดที่</p>
+      <input id="set_id" type="text" class="text-input" #set_no />
+    </div>
+    <div class="field">
+      <p>งวดที่</p>
+      <input id="lot_id" type="text" class="text-input" #lot_no />
+    </div>
+    <div class="field">
+      <p>จำนวนใบที่ลง</p>
+      <input id="lot_amount" type="text" class="text-input" #lot_amount />
+    </div>
+    <button
+      class="add-button"
+      (click)="
+        save(
+          lot_date.value,
+          lot_number.value,
+          lot_no.value,
+          set_no.value,
+          price.value,
+          lot_amount.value
+        )
+      "
+    >
+      เพิ่มข้อมูลสลาก
+    </button>
+  </section>
+</div>

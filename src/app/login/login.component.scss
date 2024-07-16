@@ -1,0 +1,25 @@
+
+.center {
+ padding-top: 20%;
+  }
+  label{
+    font-family: 'Mitr', sans-serif;
+    }
+  .grid{
+    font-family: 'Mitr', sans-serif;
+  }
+
+button, p-button{
+  font-family: 'Mitr', sans-serif;
+}
+.content{
+
+  margin-left: 20%;
+  margin-right: 20%;
+  height: 100%;
+}
+@media screen and (max-width: 700px) {
+  .content {
+margin: 0;
+  }
+}

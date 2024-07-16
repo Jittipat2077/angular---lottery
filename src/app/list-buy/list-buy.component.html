@@ -1,0 +1,155 @@
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Mitr&display=swap"
+  rel="stylesheet"
+/>
+<div class="content">
+  <section class="top-text">
+    <h1>ประวัติการสั่งซื้อ</h1>
+    <p>รายการสั่งซื้อพร้อมการค้นหาหมายเลขที่ได้ทําการสั่งซื้อ</p>
+  </section>
+
+  <div class="search">
+    <div class="flex justify-content-center flex-wrap">
+      <div class="flex flex-wrap-reverse md:flex-wrap" style="max-width: 500px">
+        <input
+          class="form-control input_num_search"
+          minlength="1"
+          maxlength="1"
+          name="num_1"
+          type="text"
+          [(ngModel)]="num_1"
+          placeholder="1"
+        />
+        <input
+          class="form-control input_num_search"
+          minlength="1"
+          maxlength="1"
+          name="num_2"
+          type="text"
+          [(ngModel)]="num_2"
+          placeholder="2"
+        />
+        <input
+          class="form-control input_num_search"
+          minlength="1"
+          maxlength="1"
+          name="num_3"
+          type="text"
+          [(ngModel)]="num_3"
+          placeholder="3"
+        />
+        <input
+          class="form-control input_num_search"
+          minlength="1"
+          maxlength="1"
+          name="num_4"
+          [(ngModel)]="num_4"
+          type="text"
+          placeholder="4"
+        />
+        <input
+          class="form-control input_num_search"
+          minlength="1"
+          maxlength="1"
+          [(ngModel)]="num_5"
+          name="num_5"
+          type="text"
+          placeholder="5"
+        />
+        <input
+          class="form-control input_num_search"
+          minlength="1"
+          maxlength="1"
+          name="num_6"
+          [(ngModel)]="num_6"
+          type="text"
+          placeholder="6"
+        />
+      </div>
+      <div class="search-set">
+        <div class="flex justify-content-center flex-wrap">
+          <div class="flex align-items-center justify-content-center">
+            <div
+              class="flex flex-wrap-reverse md:flex-wrap"
+              style="max-width: 500px"
+            >
+              <select #set_no class="select-set" aria-label="ชุดที่">
+                <option>เลือกชุด</option>
+                <option value="1">ชุดที่ 1</option>
+                <option value="2">ชุดที่ 2</option>
+                <option value="3">ชุดที่ 3</option>
+                <option value="4">ชุดที่ 4</option>
+                <option value="5">ชุดที่ 5</option>
+                <option value="6">ชุดที่ 6</option>
+              </select>
+  
+              <select #round_no class="select-period">
+                <option>เลือกงวด</option>
+                <option value="1">งวดที่ 1</option>
+                <option value="2">งวดที่ 2</option>
+                <option value="3">งวดที่ 3</option>
+                <option value="4">งวดที่ 4</option>
+                <option value="5">งวดที่ 5</option>
+                <option value="6">งวดที่ 6</option>
+              </select>
+              <button
+                type="button"
+                class="search-input"
+                (click)="searchTicket()"
+              >
+                ค้นหา
+              </button>
+              <button
+                type="button"
+                class="reset-input"
+                (click)="resetInput()"
+              >
+                รีเซ็ต
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>  
+  <div class="container-search">
+    <a routerLink="/buy-history"
+      ><button class="list-buy">
+        <i class="pi pi-list" style="font-size: 1rem; margin-right: 2px"></i
+        >รายการการสั่งซื้อ
+      </button></a
+    >
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">รายละเอียดการสั่งซื้อ</th>
+          <th scope="col">ชื่อ - นามสกุล</th>
+          <th scope="col">วันที่</th>
+          <th scope="col">หมายเลขสลาก</th>
+          <th scope="col">ราคา/ใบ</th>
+          <th scope="col">จํานวน</th>
+          <th scope="col">ราคารวม</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          *ngFor="
+            let order of searchedLottery.length > 0 ? searchedLottery : orders; let i = index
+          "
+        >
+          <td data-label="ลำดับ">{{ i + 1 }}</td>
+          <td data-label="วันที่">{{ order.firstname }}  {{ order.lastname }}</td>
+          <td data-label="รายละเอียดการสั่งซื้อ">{{ order.order_date }}</td>
+          <td data-label="หมายเลขสลาก">{{ order.orders_loterry_num }}</td>
+          <td data-label="ราคา/ใบ">80</td>
+          <td data-label="จํานวนที่สั่งซื้อ">
+            {{ order.orders_loterry_amount }}
+          </td>
+          <td data-label="ราคารวม">{{ order.orders_loterry_price }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

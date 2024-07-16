@@ -1,0 +1,155 @@
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Mitr&display=swap"
+  rel="stylesheet"
+/>
+<div class="content">
+  <section class="top-text">
+    <h1>รายการสั่งซื้อ</h1>
+    <p>รายการสั่งซื้อพร้อมการค้นหาหมายเลขที่ได้ทําการสั่งซื้อ</p>
+  </section>
+  <section class="content-top">
+    <div class="grid">
+      <div class="col-12 md:col-6 lg:col-4">
+        <a routerLink="/today">
+          <div class="text-link">
+            <i class="pi pi-sun" style="font-size: 1rem; padding-right: 5px"></i
+            >รายงานการสั่งซื้อสลาก
+          </div>
+        </a>
+      </div>
+      <div class="col-12 md:col-6 lg:col-4">
+        <div routerLink="/add-data" class="text-link">
+          <i class="pi pi-plus" style="font-size: 1rem; padding-right: 5px"></i
+          >เพิ่มข้อมูลสลาก
+        </div>
+      </div>
+      <div class="col-12 md:col-12 lg:col-4">
+        <a routerLink="/dashboard"
+          ><div class="text-link">
+            <i
+              class="pi pi-search"
+              style="font-size: 1rem; padding-right: 5px"
+            ></i
+            >ค้นหาสลาก
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <div class="search">
+    <div class="flex justify-content-center flex-wrap">
+      <div class="flex flex-wrap-reverse md:flex-wrap" style="max-width: 500px">
+        <input type="text" class="input-number" minlength="1" #num_1 />
+        <input type="text" class="input-number" minlength="2" #num_2 />
+        <input type="text" class="input-number" minlength="3" #num_3 />
+        <input type="text" class="input-number" minlength="4" #num_4 />
+        <input type="text" class="input-number" minlength="5" #num_5 />
+        <input type="text" class="input-number" minlength="6" #num_6 />
+      </div>
+      <div class="search-set">
+        <div class="flex justify-content-center flex-wrap">
+          <div class="flex align-items-center justify-content-center">
+            <div
+              class="flex flex-wrap-reverse md:flex-wrap"
+              style="max-width: 500px"
+            >
+            <select #set_no class="select-set" aria-label="ชุดที่">
+              <option disabled>เลือกชุด</option>
+              <option>เลือกชุด</option>
+              <ng-container *ngFor="let i of arrayNumbers">
+                <option [value]="i">{{ i }}</option>
+              </ng-container>
+            </select>
+
+            <select #lot_no class="select-set" aria-label="ชุดที่">
+              <option disabled>เลือกงวด</option>
+              <option>เลือกงวด</option>
+              <ng-container *ngFor="let i of arraylot_no">
+                <option [value]="i">{{ i }}</option>
+              </ng-container>
+            </select>
+              <button
+                type="button"
+                class="search-input"
+                (click)="
+                  searchTicket(
+                    num_1.value,
+                    num_2.value,
+                    num_3.value,
+                    num_4.value,
+                    num_5.value,
+                    num_6.value,
+                    set_no.value,
+                    lot_no.value
+                  )
+                "
+              >
+                ค้นหา
+              </button>
+              <button
+              type="button"
+              class="reset-input"
+              (click)="clearInput(num_1, num_2, num_3, num_4, num_5, num_6, set_no, lot_no)"
+            >
+              รีเซีต
+            </button>
+              <!-- <button
+                type="button"
+                class="search-input"
+                (click)="searchTicket(set_no.value, lot_no.value)"
+              >
+                ค้นหา
+              </button> -->
+              <!-- <button
+                type="button"
+                class="reset-input"
+                (click)="clearInput(num_1, num_2, num_3, num_4, num_5, num_6)"
+              >
+                รีเซีต
+              </button> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-search">
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">หมายเลขสลาก</th>
+          <th scope="col">ราคาต่อใบ</th>
+          <th scope="col">ชุดที่</th>
+          <th scope="col">งวดที่</th>
+          <th scope="col">วันที่</th>
+          <th scope="col">จัดการข้อมูล</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let lottery of lotterys">
+          <td data-label="หมายเลขสลาก" class="number-table">
+            {{ lottery.lot_number }}
+          </td>
+          <td data-label="ราคาต่อใบ">{{ lottery.price }}</td>
+          <td data-label="ชุดที่">
+            <p>{{ lottery.set_no }}</p>
+          </td>
+          <td data-label="งวดที่">{{ lottery.lot_no }}</td>
+          <td data-label="วันที่">{{ lottery.lot_date }}</td>
+          <td data-label="ต้องการสั่งซื้อ">
+            <a [routerLink]="['/admin-update', lottery.lot_id]">
+              <button class="button-change">แก้ไข</button>
+            </a>
+            <button class="button-Cancel" (click)="deleteItem(lottery.lot_id)">
+              ลบ
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

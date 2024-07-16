@@ -1,0 +1,83 @@
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Mitr&display=swap"
+  rel="stylesheet"
+/>
+
+<div class="content">
+  <section class="top-text">
+    <h1>แก้ไขข้อมูลสลาก</h1>
+    <p>กรุณากรอกข้อมูลเพื่อแก้ไขข้อมูลสลาก</p>
+  </section>
+  <section class="form">
+    <form (ngSubmit)="updateItem()" #editForm="ngForm">
+      <div class="field">
+        <label for="lotteryNumber">หมายเลขสลาก</label>
+        <input
+          id="lotteryNumber"
+          name="lotteryNumber"
+          type="text"
+          class="text-input"
+          [(ngModel)]="editedItem.lot_number"
+          required
+        />
+      </div>
+      <div class="field">
+        <label for="lotteryNumber">วันที่</label>
+        <input
+          id="lot_date"
+          name="lot_date"
+          type="date"
+          class="text-input"
+          [(ngModel)]="editedItem.lot_date"
+          required
+        />
+      </div>
+      <div class="field">
+        <label for="pricePerTicket">แก้ไขราคาลอตเตอรี่</label>
+        <input
+          id="pricePerTicket"
+          name="pricePerTicket"
+          type="text"
+          class="text-input"
+          [(ngModel)]="editedItem.price"
+          required
+        />
+      </div>
+      <div class="field">
+        <label for="setNumber">แก้ไขชุดที่</label>
+        <input
+          id="setNumber"
+          name="setNumber"
+          type="text"
+          class="text-input"
+          [(ngModel)]="editedItem.set_no"
+        />
+      </div>
+      <div class="field">
+        <label for="roundNumber">แก้ไขงวดที่</label>
+        <input
+          id="roundNumber"
+          name="roundNumber"
+          type="text"
+          class="text-input"
+          [(ngModel)]="editedItem.lot_no"
+          required
+        />
+      </div>
+      <div class="field">
+        <label for="ticketAmount">แก้ไขจำนวน</label>
+        <input
+          id="ticketAmount"
+          name="ticketAmount"
+          type="text"
+          class="text-input"
+          [(ngModel)]="editedItem.lot_amount"
+          required
+        />
+      </div>
+      <button type="submit" class="add-button">แก้ไขข้อมูลสลาก</button>
+    </form>
+  </section>
+</div>

@@ -1,0 +1,113 @@
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Mitr&display=swap"
+  rel="stylesheet"
+/>
+<div class="content">
+  <section class="top-text">
+    <h1>รายงานการสั่งซื้อประจําเดือน</h1>
+    <select [(ngModel)]="selectedMonth" (change)="searchByMonth()" class="select-month">
+      <option value="" disabled>กรุณาเลือกเดือน</option>
+      <option value="1">มกราคม</option>
+      <option value="2">กุมภาพันธ์</option>
+      <option value="3">มีนาคม</option>
+      <option value="4">เมษายน</option>
+      <option value="5">พฤษภาคม</option>
+      <option value="6">มิถุนายน</option>
+      <option value="7">กรกฎาคม</option>
+      <option value="8">สิงหาคม</option>
+      <option value="9">กันยายน</option>
+      <option value="10">ตุลาคม</option>
+      <option value="11">พฤศจิกายน</option>
+      <option value="12">ธันวาคม</option>
+    </select>
+    <p>รายการสั่งซื้อพร้อมการค้นหาหมายเลขที่ได้ทําการสั่งซื้อ</p>
+  </section>
+<!-- 
+  <div>
+    <label>กรุณาเลือกเดือน : </label>
+    <select [(ngModel)]="selectedMonth" (change)="searchByMonth()">
+      <option value="1">มกราคม</option>
+      <option value="1">มกราคม</option>
+      <option value="2">กุมภาพันธ์</option>
+      <option value="3">มีนาคม</option>
+      <option value="4">เมษายน</option>
+      <option value="5">พฤษภาคม</option>
+      <option value="6">มิถุนายน</option>
+      <option value="7">กรกฎาคม</option>
+      <option value="8">สิงหาคม</option>
+      <option value="9">กันยายน</option>
+      <option value="10">ตุลาคม</option>
+      <option value="11">พฤศจิกายน</option>
+      <option value="12">ธันวาคม</option> -->
+      <!-- เพิ่มเดือนต่อไปตามลำดับ -->
+    <!-- </select>
+  </div> -->
+  <section class="content-top">
+    <div class="grid">
+      <div class="col-12 md:col-6 lg:col-4">
+        <a href="/today">
+          <div class="text-link">
+            <i class="pi pi-sun" style="font-size: 1rem; padding-right: 5px"></i
+            >รายงานการสั่งซื้อสลาก
+          </div>
+        </a>
+      </div>
+      <div class="col-12 md:col-6 lg:col-4">
+        <a href="/add-data">
+          <div class="text-link">
+            <i
+              class="pi pi-plus"
+              style="font-size: 1rem; padding-right: 5px"
+            ></i
+            >เพิ่มข้อมูลสลาก
+          </div>
+        </a>
+      </div>
+      <div class="col-12 md:col-12 lg:col-4">
+        <a href="/dashboard"
+          ><div class="text-link">
+            <i
+              class="pi pi-search"
+              style="font-size: 1rem; padding-right: 5px"
+            ></i
+            >ค้นหาสลาก
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+  <div class="container-search">
+    <a routerLink="/today"
+      ><button class="list-buy">
+        <i class="pi pi-calendar" style="font-size: 1rem; margin-right: 2px"></i
+        >รายงานการสั่งซื้อประจําวัน
+      </button></a
+    >
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">ชื่อ - นามสกุล</th>
+          <th scope="col">หมายเลขสลาก</th>
+          <th scope="col">จํานวน</th>
+          <th scope="col">ราคารวม</th>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-container *ngFor="let monthData of monthData">
+          <tr>
+            <td data-label="ชื่อ - สกุล">
+              {{ monthData.firstname }} {{ monthData.lastname }}
+            </td>
+            <td data-label="หมายเลขสลาก">{{ monthData.orders_loterry_num }}</td>
+            <td data-label="จํานวนที่สั่งซื้อ">
+              {{ monthData.orders_loterry_amount }}
+            </td>
+            <td data-label="ราคารวม">{{ monthData.orders_loterry_price }}</td>
+          </tr>
+        </ng-container>
+      </tbody>
+    </table>
+  </div>
+</div>

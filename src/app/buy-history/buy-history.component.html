@@ -1,0 +1,75 @@
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Mitr&display=swap"
+  rel="stylesheet"
+/>
+<div class="content">
+  <section class="top-text">
+    <h1>รายการสั่งซื้อ</h1>
+    <p>รายการสั่งซื้อพร้อมการค้นหาหมายเลขที่ได้ทําการสั่งซื้อ</p>
+  </section>
+
+  <div class="container-search">
+    <a routerLink="/list-buy"
+      ><button class="list-buy">
+        <i class="pi pi-clock" style="font-size: 1rem; margin-right: 2px"></i
+        >ประวัติการสั่งซื้อ
+      </button></a
+    >
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">หมายเลขสลาก</th>
+          <th scope="col">ราคา/ใบ</th>
+          <th scope="col">วันที่</th>
+          <th scope="col">ราคารวม</th>
+          <th scope="col">สั่งซื้อ</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let cart of carts">
+          <td data-label="หมายเลขสลาก">{{ cart.num }}</td>
+          <td data-label="ราคา/ใบ">{{ cart.price }}</td>
+          <td data-label="วันที่">23-06-2566</td>
+          <td data-label="ราคารวม">{{ cart.price_all }}</td>
+          <td data-label="ต้องการสั่งซื้อ">
+            <button class="button-buy" (click)="confirmOrder(cart, cart.id)">
+              สั่งซื้อ</button
+            ><button class="button-Cancel" (click)="deleteItem(cart.id)">
+              ยกเลิก
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <table>
+      <thead>
+        <tr>
+          <th scope="col"></th>
+          <th scope="col"></th>
+          <th scope="col"></th>
+          <th scope="col"></th>
+          <th scope="col">จํานวนใบ</th>
+          <th scope="col">ราคารวม</th>
+          <th scope="col">สั่งซื้อทั้งหมด</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td data-label="ชื่อ-นามสกุล"></td>
+          <td data-label="วันที่"></td>
+          <td data-label="หมายเลขสลาก"></td>
+          <td data-label="หมายเลขสลาก"></td>
+          <td data-label="วันที่สั่งซื้อ">{{ Amount() }}</td>
+          <td data-label="จํานวนที่สั่งซื้อ">{{ totalAmount() }}</td>
+          <td data-label="จํานวนที่สั่งซื้อ">
+            <button class="button-buy" (click)="confirmOrder_all()">
+              สั่งซื้อ
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

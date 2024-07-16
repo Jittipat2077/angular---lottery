@@ -1,0 +1,68 @@
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Mitr&display=swap"
+  rel="stylesheet"
+/>
+<div class="content">
+  <div class="center">
+    <div class="flex justify-content-center flex-wrap align-content-center">
+      <div class="grid">
+        <p-card header="สมัครสมาชิก">
+          <p class="m-0"></p>
+          <div class="p-fluid" style="width: 400px">
+            <div class="field">
+              <label for="Username">ชื่อผู้ใช้</label>
+              <div class="p-inputgroup">
+                <span class="p-inputgroup-addon">
+                  <i class="pi pi-user"></i>
+                </span>
+                <input
+                  pInputText
+                  type="email"
+                  name="email"
+                  placeholder="Email"
+                  #email
+                />
+              </div>
+            </div>
+            <div class="field">
+              <label for="password">รหัสผ่าน</label>
+              <div class="p-inputgroup">
+                <span class="p-inputgroup-addon">
+                  <i class="pi pi-unlock"></i>
+                </span>
+                <input
+                  pInputText
+                  type="password"
+                  name="password"
+                  placeholder="Password"
+                  #password
+                />
+              </div>
+            </div>
+            <div class="formgrid grid">
+              <div class="field col">
+                <p-button
+                  label="เข้าสู่ระบบ"
+                  (click)="login(email.value, password.value)"
+                ></p-button>
+              </div>
+              <div class="field col">
+                <a routerLink="/register"
+                  ><button
+                    pButton
+                    pRipple
+                    label="Submit"
+                    class="p-button-success"
+                    label="สมัครสมาชิก"
+                  ></button
+                ></a>
+              </div>
+            </div>
+          </div>
+        </p-card>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,68 @@
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Mitr&display=swap"
+  rel="stylesheet"
+/>
+<div class="content">
+  <section class="top-text">
+    <h1>รายงานการสั่งซื้อประจําวัน</h1>
+    <input class="date" type="date" [(ngModel)]="selectedDate" (change)="updateDate()" />
+  </section>
+  <div class="mounth">
+    <a routerLink="/mounth">เดือน</a>
+  </div>
+  <section class="content-top">
+    <div class="grid">
+      <div class="col-12 md:col-6 lg:col-4">
+        <a routerLink="/today">
+          <div class="text-link">
+            รายงานการสั่งซื้อสลาก
+          </div>
+        </a>
+      </div>
+
+      <div class="col-12 md:col-6 lg:col-4">
+        <a routerLink="/add-data">
+          <div class="text-link">
+            เพิ่มข้อมูลสลาก
+          </div>
+        </a>
+      </div>
+      <div class="col-12 md:col-12 lg:col-4">
+        <a routerLink="/dashboard">
+          <div class="text-link">
+            ค้นหาสลาก
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+  <div class="container-search">
+    <!-- ตารางแสดงข้อมูล -->
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">ชื่อ - นามสกุล</th>
+          <th scope="col">หมายเลขสลาก</th>
+          <th scope="col">จํานวน</th>
+          <th scope="col">ราคารวม</th>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-container *ngFor="let dayData of dayData">
+          <tr>
+            <td data-label="ชื่อ - สกุล">
+              {{ dayData.firstname }} {{ dayData.lastname }}
+            </td>
+            <td data-label="หมายเลขสลาก">{{ dayData.orders_loterry_num }}</td>
+            <td data-label="จํานวนที่สั่งซื้อ">
+              {{ dayData.orders_loterry_amount }}
+            </td>
+            <td data-label="ราคารวม">{{ dayData.orders_loterry_price }}</td>
+          </tr>
+        </ng-container>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,49 @@
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Mitr&display=swap"
+  rel="stylesheet"
+/>
+<mat-toolbar>
+  <i class="pi pi-spin pi-cog" style="font-size: 1rem"></i>
+  <mat-toolbar><span>สลากกินเเบ่งรัฐบาล</span></mat-toolbar>
+  <input id="menu-toggle" type="checkbox" />
+  <label class="menu-button-container" for="menu-toggle">
+    <div class="menu-button"></div>
+  </label>
+  <span class="example-spacer"></span>
+  <ul class="menu">
+    <span class="example-spacer"></span>
+    <li>
+      <a routerLink="/home"
+        ><i class="pi pi-home" style="margin-right: 5px"></i>หน้าหลัก</a
+      >
+    </li>
+    <li *ngIf="userData">
+      <a routerLink="/search"
+        ><i class="pi pi-search" style="margin-right: 5px"></i
+        >{{ userData.firstname }}</a
+      >
+    </li>
+    <li *ngIf="!userData">
+      <a routerLink="/login"
+        ><i class="pi pi-user" style="margin-right: 5px"></i>เข้าสู่ระบบ</a
+      >
+    </li>
+    <li>
+      <a routerLink="/register"
+        ><i class="pi pi-user-plus" style="margin-right: 5px"></i>สมัครสมาชิก</a
+      >
+    </li>
+    <li *ngIf="userData && userData.firstname">
+      <a routerLink="/buy-history">
+        <i class="pi pi-cart-plus" style="margin-right: 5px"></i>รายการสั่งซื้อ
+      </a>
+    </li>
+    <li>
+      <a routerLink="/search"
+        ><i class="pi pi-search" style="margin-right: 5px"></i>ค้นหาลอตเตอรี่</a
+      >
+    </li>
+  </ul>
+</mat-toolbar>

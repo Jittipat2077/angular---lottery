@@ -1,0 +1,68 @@
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Mitr&display=swap" rel="stylesheet">
+<div class="content">
+    <div class="register">
+      
+        <div class="flex justify-content-center flex-wrap">
+         
+                <div class="flex flex-wrap md:flex-wrap" style="max-width: 450px; box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;padding: 20px; border-radius: 10px; ">
+                  <div class="field col-12 md:col-12">
+                   <h1 class="text-header">สมัครสมาชิก</h1>
+                </div>
+                            <div class="field col-12 md:col-6">
+                                <label for="firstname6">ชื่อ</label>
+                                <input id="firstname6" type="text" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full" #firstname required>
+                            </div>
+                            <div class="field col-12 md:col-6">
+                                <label for="lastname6">นามสกุล</label>
+                                <input id="lastname6" type="text" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full" #lastname required>
+                            </div>
+                            <div class="field col-12">
+                                <label for="Email">อีเมล</label>
+                                <input id="Email" type="email" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full" #email required>
+                            </div>
+                           
+                            <div class="field col-12">
+                                <label for="address">รหัสผ่าน</label>
+                                <input id="Password" type="password" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full" #password required>
+                            </div>
+                            <div class="field col-12 md:col-6">
+                                <label for="date">วันที่</label>
+                                <input id="date" type="date" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full" #birthday required>
+                            </div>
+                           
+                            <div class="field col-12 md:col-6">
+                                <label for="tel">เบอร์โทรศัพท์</label>
+                                <input id="tel" type="text" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full" #phone required>
+                            </div>
+                            <button class="btn btn-primary button_css"(click)="save(firstname.value,lastname.value,email.value,password.value,birthday.value,phone.value)">บันทึกข้อมูล</button>
+                        </div>
+                     
+                </div>
+                  </div>
+
+</div>
+
+
+        
+
+
+ <!-- <div class="align-content-between">
+    <div style="margin-top: 20px;">
+      <div class="content">
+        <div style="padding: 20px;">
+          <div>
+            <h4>Register Form</h4>
+          </div>
+              <div class="register">
+                <div class="form_1">
+                  <input type="text" name="fname" id="fname" placeholder="Firstname" class="form-control" required="" #fname>
+                </div>
+                <button class="btn btn-primary button_css"(click)="save(fname.value)">บันทึกข้อมูล</button>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div> -->
